@@ -1,0 +1,30 @@
+.wrap {
+  background-color: #82B284;
+  height: 100%;
+  min-width: 48px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.link {
+  background-color: #82B284;
+  border: none;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 48px;
+  height: 60px;
+  cursor: pointer;
+
+  &:global.active {
+    background-color: #A4C7A5;
+  }
+
+  &:hover {
+    background-color: #58A742;
+  }
+}
+
+

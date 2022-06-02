@@ -1,0 +1,40 @@
+.wrap {
+  max-width: 160px;
+  min-width: 160px;
+}
+
+.imgWrap {
+  position: relative;
+
+  & > img {
+    width: 160px;
+    height: 160px;
+  }
+
+}
+
+.imgDeleteBtnWrap {
+  position: absolute;
+  top:0;
+  right: 0;
+
+}
+
+.title {
+  margin-top: 8px;
+  overflow: hidden;
+  width: 160px;
+  text-overflow: ellipsis;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 16px;
+  color: #3B3B3B;
+}
+
+.date {
+  font-style: normal;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 16px;
+  color: #808080;
+}

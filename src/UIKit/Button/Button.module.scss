@@ -1,0 +1,48 @@
+$COLOR: #82B284;
+$COLOR_HOVER: #98C88C;
+$COLOR_ACTIVE: #58A742;
+
+.wrap {
+  cursor: pointer;
+  padding: 13px;
+  background-color: white;
+  border: 1px solid #e5e5e5;
+  min-width: fit-content;
+  color: $COLOR;
+  font-weight: 600;
+  border-radius: 2px;
+  position: relative;
+  width: 100%;
+
+  & > svg {
+    fill: $COLOR;
+    width: 16px;
+    height: 16px;
+    position: absolute;
+    left: 13px;
+    top: calc(50% - 8px)
+  }
+
+  &:hover {
+    color: $COLOR_HOVER;
+    border-color: #cdcdcd;
+
+    & > svg {
+      fill: $COLOR_HOVER;
+    }
+  }
+
+  &:active {
+    color: $COLOR_ACTIVE;
+    border-color: #cdcdcd;
+
+    & > svg {
+      fill: $COLOR_ACTIVE;
+    }
+  }
+}
+
+.bigPaddingLeft {
+  padding-left: 36px;
+}
+

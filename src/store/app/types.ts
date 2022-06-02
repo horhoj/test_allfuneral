@@ -1,7 +1,5 @@
-export interface AppState {
-  redirectUrl: AppRedirectUrl | null;
-}
-
 export interface AppRedirectUrl {
   path: string;
 }
+
+export const SLICE_NAME = 'app';

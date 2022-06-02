@@ -1,0 +1,40 @@
+.wrap {
+  position: relative;
+  width: 100%;
+
+}
+
+.input {
+  width: 100%;
+  padding: 13px;
+  border: 1px solid #cdcdcd;
+  border-radius: 3px;
+  outline: none;
+  color: #3B3B3B;
+
+  &::placeholder {
+    text-transform: uppercase;
+    opacity: 1;
+    color: #808080;
+  }
+
+  &:hover {
+    border-color: #808080;
+  }
+
+  &:focus {
+    border-color: #3b3b3b;
+  }
+}
+
+.title {
+  text-transform: uppercase;
+  font-size: 10px;
+  line-height: 12px;
+  color: #808080;
+  position: absolute;
+  left: 12px;
+  top: -5px;
+  background-color: white;
+  padding: 0 3px;
+}

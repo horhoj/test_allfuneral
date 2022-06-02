@@ -1,0 +1,25 @@
+.wrap {
+  display: flex;
+  flex-grow: 1;
+  flex-direction: column;
+  max-width: 500px;
+  gap: 10px;
+}
+
+.controlPanelWrap {
+  display: flex;
+  gap: 10px;
+  width: 100%;
+}
+
+
+.contractWrap {
+  display: flex;
+  gap: 10px;
+  width: 100%;
+
+  & > .formControl {
+    width: 100%;
+  }
+}
+

@@ -1,0 +1,25 @@
+.wrap {
+  position: relative;
+  width: 100%;
+
+}
+
+.select {
+  & > .container {
+    background-color: red;
+  }
+
+}
+
+.title {
+  text-transform: uppercase;
+  font-size: 10px;
+  line-height: 12px;
+  color: #808080;
+  position: absolute;
+  left: 12px;
+  top: -5px;
+  background-color: white;
+  padding: 0 3px;
+  z-index: 1;
+}

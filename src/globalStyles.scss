@@ -5,8 +5,27 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  font-size: 14px;
+  line-height: 20px;
 }
 
 body {
-  min-width: 360px;
+  min-width: 800px;
+
+  background-color: #e5e5e5;
+  color: #3B3B3B;
+}
+
+
+.ReactModal__Overlay {
+  opacity: 0;
+  transition: opacity 300ms ease-in-out;
+}
+
+.ReactModal__Overlay--after-open {
+  opacity: 1;
+}
+
+.ReactModal__Overlay--before-close {
+  opacity: 0;
 }

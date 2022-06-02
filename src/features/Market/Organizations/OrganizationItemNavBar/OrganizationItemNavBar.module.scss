@@ -1,0 +1,51 @@
+.wrap {
+  min-height: 72px;
+  padding: 5px 40px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid #E5E5E5;
+}
+
+.rightIconList {
+  display: flex;
+  gap: 20px;
+}
+
+.leftBlock {
+  & > a {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    text-decoration: none;
+
+
+    cursor: pointer;
+
+    & > img {
+      width: 20px;
+      height: 20px;
+    }
+
+    & > span {
+      font-style: normal;
+      font-weight: 600;
+      font-size: 16px;
+      line-height: 20px;
+      color: #82B284;
+    }
+
+    & > img, & > span {
+
+      &:hover {
+        filter: brightness(1.2);
+      }
+
+      &:active {
+        filter: brightness(0.9);
+      }
+
+    }
+  }
+}
+
