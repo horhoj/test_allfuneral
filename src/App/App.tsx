@@ -5,6 +5,7 @@ import { appSlice } from '../store/app';
 import styles from './App.module.scss';
 import { LeftNavBlock } from './LeftNavBlock';
 import { Footer } from './Footer';
+import { Spinner } from './Spinner';
 
 export const App: React.FC = () => {
   const dispatch = useAppDispatch();
@@ -18,18 +19,21 @@ export const App: React.FC = () => {
   }
 
   return (
-    <div className={styles.wrap}>
-      <div className={styles.content}>
-        <nav>
-          <LeftNavBlock />
-        </nav>
-        <main className={styles.main}>
-          <Router />
-        </main>
+    <>
+      <Spinner />
+      <div className={styles.wrap}>
+        <div className={styles.content}>
+          <nav>
+            <LeftNavBlock />
+          </nav>
+          <main className={styles.main}>
+            <Router />
+          </main>
+        </div>
+        <footer className={styles.footer}>
+          <Footer />
+        </footer>
       </div>
-      <footer className={styles.footer}>
-        <Footer />
-      </footer>
-    </div>
+    </>
   );
 };

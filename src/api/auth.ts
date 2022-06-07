@@ -5,7 +5,7 @@ import {
   BASE_URL,
   LS_TOKEN_KEY_NAME,
   TOKEN,
-} from './config';
+} from '../config';
 
 const requestExecutor = requestExecutorCreator(
   BASE_URL,

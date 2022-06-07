@@ -1,10 +1,10 @@
-import { FC } from 'react';
+import { FC, ReactNode } from 'react';
 import classNames from 'classnames';
 import styles from './Confirm.module.scss';
 
 interface ConfirmProps {
   title: string;
-  message: string;
+  message: ReactNode;
   cancelLabel: string;
   confirmLabel: string;
   onConfirm: () => void;

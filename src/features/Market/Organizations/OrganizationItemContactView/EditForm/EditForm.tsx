@@ -17,7 +17,7 @@ const validationSchema = yup.object({
   lastname: yup.string().required('Должно быть заполнено'),
   firstname: yup.string().required('Должно быть заполнено'),
   patronymic: yup.string().required('Должно быть заполнено'),
-  email: yup.string().required('Должно быть заполнено'),
+  email: yup.string().email('Не почта').required('Должно быть заполнено'),
   phone: yup
     .string()
     .min(11, 'не менее 11 символов')

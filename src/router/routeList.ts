@@ -26,7 +26,7 @@ export type Routes = typeof routeNameList[number];
 
 export const routeList: Record<Routes, RouteItem> = {
   HomePage: {
-    path: '/',
+    path: '/home',
     component: HomePage,
   },
 

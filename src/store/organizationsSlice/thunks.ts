@@ -4,7 +4,6 @@ import {
   OrganizationItem,
   OrganizationItemContactItem,
 } from '../../types/organizations';
-import { store } from '../store';
 import { SLICE_NAME } from './types';
 
 export const fetchOrganizationItemThunk = createAsyncThunk(
@@ -83,7 +82,7 @@ interface DeleteImageThunkPayload {
   imageName: string;
 }
 
-export const deleteImage = createAsyncThunk(
+export const deleteImageThunk = createAsyncThunk(
   `${SLICE_NAME}/deleteImage`,
   async ({ imageName, organizationId }: DeleteImageThunkPayload, store) => {
     const response = await api.organizations.deleteImage(
@@ -100,11 +99,28 @@ interface AddImageThunkPayload {
   file: File;
 }
 
-export const addImage = createAsyncThunk(
+export const addImageThunk = createAsyncThunk(
   `${SLICE_NAME}/addImage`,
   async ({ organizationId, file }: AddImageThunkPayload, store) => {
     const response = await api.organizations.addImage(organizationId, file);
     store.dispatch(fetchOrganizationItemThunk(organizationId));
+    return response;
+  },
+);
+
+interface DeleteOrganizationItemThunkPayload {
+  organizationId: string;
+  successCb: () => void;
+}
+
+export const deleteOrganizationItemThunk = createAsyncThunk(
+  `${SLICE_NAME}/deleteOrganizationItemThunk`,
+  async ({ organizationId, successCb }: DeleteOrganizationItemThunkPayload) => {
+    const response = await api.organizations.deleteOrganizationItem(
+      organizationId,
+    );
+    api.organizations.localeCacheClear();
+    successCb();
     return response;
   },
 );

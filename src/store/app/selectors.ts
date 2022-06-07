@@ -7,3 +7,6 @@ export const getRedirectUrl = (state: RootState): AppRedirectUrl | null =>
 export const getAuthRequest = (
   state: RootState,
 ): RequestSliceStateProperty<string> => state.app.authRequest;
+
+export const getIsLoading = (state: RootState): boolean =>
+  state.app.authRequest.isLoading;

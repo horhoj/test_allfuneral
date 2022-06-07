@@ -27,3 +27,21 @@ export const getPatchOrganizationItemContactItemRequest = (
 export const getDeleteImageRequest = (
   state: RootState,
 ): RequestSliceStateProperty<unknown> => state.organizations.deleteImageRequest;
+
+export const getAddImageRequest = (
+  state: RootState,
+): RequestSliceStateProperty<unknown> => state.organizations.addImageRequest;
+
+export const getDeleteOrganizationItemRequest = (
+  state: RootState,
+): RequestSliceStateProperty<unknown> =>
+  state.organizations.deleteOrganizationItemRequest;
+
+export const getIsLoading = (state: RootState): boolean =>
+  state.organizations.patchOrganizationItemContactItemRequest.isLoading ||
+  state.organizations.fetchOrganizationItemContactItemRequest.isLoading ||
+  state.organizations.patchOrganizationItemRequest.isLoading ||
+  state.organizations.fetchOrganizationItemRequest.isLoading ||
+  state.organizations.deleteImageRequest.isLoading ||
+  state.organizations.addImageRequest.isLoading ||
+  state.organizations.deleteOrganizationItemRequest.isLoading;

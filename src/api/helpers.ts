@@ -4,7 +4,7 @@ import axios, {
   AxiosResponse,
 } from 'axios';
 
-import { LS_TOKEN_KEY_NAME } from './config';
+import { LS_TOKEN_KEY_NAME } from '../config';
 
 export const requestExecutorCreator =
   (

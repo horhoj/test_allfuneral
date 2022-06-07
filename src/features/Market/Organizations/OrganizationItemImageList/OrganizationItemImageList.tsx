@@ -24,6 +24,9 @@ export const OrganizationItemImageList: FC<OrganizationItemImageListProps> = ({
           {organizationItem.photos.map((photoItem) => (
             <Card key={nanoid()} photoItem={photoItem} onDelete={onDelete} />
           ))}
+          {organizationItem.photos.length === 0 && (
+            <div>Нажмите кнопку добавить изображение</div>
+          )}
         </div>
         <div className={styles.buttonListWrap}>
           <FileInput
@@ -33,6 +36,7 @@ export const OrganizationItemImageList: FC<OrganizationItemImageListProps> = ({
                 e.target.value = '';
               }
             }}
+            accept="image/png, image/jpeg"
           />
         </div>
       </div>

@@ -18,6 +18,7 @@ interface InitialState {
   patchOrganizationItemContactItemRequest: RequestSliceStateProperty<unknown>;
   deleteImageRequest: RequestSliceStateProperty<unknown>;
   addImageRequest: RequestSliceStateProperty<unknown>;
+  deleteOrganizationItemRequest: RequestSliceStateProperty<unknown>;
 }
 
 const initialState: InitialState = {
@@ -30,20 +31,14 @@ const initialState: InitialState = {
     makeRequestSliceStateProperty<unknown>(),
   deleteImageRequest: makeRequestSliceStateProperty<unknown>(),
   addImageRequest: makeRequestSliceStateProperty<unknown>(),
+  deleteOrganizationItemRequest: makeRequestSliceStateProperty<unknown>(),
 };
 
 export const { actions, reducer } = createSlice({
   initialState,
   name: SLICE_NAME,
   reducers: {
-    resetFetchOrganizationItemRequest: (state) => {
-      state.fetchOrganizationItemRequest =
-        makeRequestSliceStateProperty<OrganizationItem>();
-    },
-    resetFetchOrganizationItemContactItemRequest: (state) => {
-      state.fetchOrganizationItemContactItemRequest =
-        makeRequestSliceStateProperty<OrganizationItemContactItem>();
-    },
+    reset: () => initialState,
   },
   extraReducers: (builder) => {
     makeRequestCaseToBuilder<InitialState>(
@@ -68,13 +63,18 @@ export const { actions, reducer } = createSlice({
     );
     makeRequestCaseToBuilder<InitialState>(
       builder,
-      thunks.deleteImage,
+      thunks.deleteImageThunk,
       'deleteImageRequest',
     );
     makeRequestCaseToBuilder<InitialState>(
       builder,
-      thunks.addImage,
+      thunks.addImageThunk,
       'addImageRequest',
+    );
+    makeRequestCaseToBuilder<InitialState>(
+      builder,
+      thunks.deleteOrganizationItemThunk,
+      'deleteOrganizationItemRequest',
     );
   },
 });

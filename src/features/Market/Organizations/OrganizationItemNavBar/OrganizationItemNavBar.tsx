@@ -32,7 +32,12 @@ export const OrganizationItemNavBar: FC<OrganizationItemNavBarProps> = ({
       >
         <Confirm
           title={'Удалить карточку'}
-          message={'Отправить карточку организации в архив?'}
+          message={
+            <>
+              <div>Отправить карточку организации в архив?</div>
+              <div>(ВСЕ ЛОКАЛЬНЫЕ ИЗМЕНЕНИЯ БУДУТ УДАЛЕНЫ!!!)</div>
+            </>
+          }
           cancelLabel={'Отмена'}
           confirmLabel={'Удалить'}
           onConfirm={() => {

@@ -5,7 +5,6 @@ import {
   OrganizationItemType,
   PhotoItem,
 } from '../types/organizations';
-import { requestExecutorCreator } from './helpers';
 import {
   API_DEFAULT_REQUEST_HEADERS,
   BASE_URL,
@@ -13,7 +12,8 @@ import {
   LS_FAKE_IMAGE_LIST,
   LS_FAKE_ORGANIZATION_ITEM_CONTACT_ITEM_DATA,
   LS_FAKE_ORGANIZATION_ITEM_DATA,
-} from './config';
+} from '../config';
+import { requestExecutorCreator } from './helpers';
 
 interface OrganizationItemPatchPayload {
   name: string;
@@ -240,4 +240,24 @@ export const addImage = async (
   localStorage.setItem(LS_FAKE_IMAGE_LIST, JSON.stringify(fakeImageList));
 
   return response.data;
+};
+
+export const deleteOrganizationItem = async (
+  organizationId: string,
+): Promise<unknown> => {
+  const requestConfig: AxiosRequestConfig = {
+    url: `/companies/${organizationId}`,
+    method: 'delete',
+  };
+
+  const response = await requestExecutor<unknown>(requestConfig);
+
+  return response.data;
+};
+
+export const localeCacheClear = (): void => {
+  localStorage.removeItem(LS_FAKE_ORGANIZATION_ITEM_DATA);
+  localStorage.removeItem(LS_FAKE_ORGANIZATION_ITEM_CONTACT_ITEM_DATA);
+  localStorage.removeItem(LS_FAKE_IMAGE_LIST);
+  localStorage.removeItem(LS_FAKE_DELETE_IMAGE_LIST);
 };

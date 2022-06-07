@@ -54,7 +54,7 @@ export const LeftNavBlock: FC = () => {
           className={styles.link}
           title={'Выход'}
           onClick={() => {
-            console.log(123123);
+            alert('Кнопка выхода из системы');
           }}
         >
           <img src={exitIcon} alt={'exitIcon'} />
